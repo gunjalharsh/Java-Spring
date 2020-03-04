@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+
+		<bean id="Bean1" class="com.test.BeanDemo">
+		<property name="name" value="HK"/>
+
+		</bean>
+		
+		<bean id="myaddress" class="com.test.Address">
+		<constructor-arg value="Chennai"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	
+		</bean>
+		 
+		<bean id="myemployee1" class="com.test.EmployeeBean">
+		
+		<constructor-arg value="10001"></constructor-arg>
+		<constructor-arg value="Harshal"></constructor-arg>
+		
+		<constructor-arg>
+		<ref bean="myaddress"></ref>
+		
+		</constructor-arg>
+		</bean>
+		
+		<bean id="stud" class="com.inheritance.Student">
+		
+		<property name="sid" value="2001"></property>
+		<property name="name" value="Rahul"></property>
+		
+		</bean>
+		
+		<bean id="course1" class="com.inheritance.Student_course" parent="stud">
+		
+		<property name="name" value="Sahil"></property>
+		<property name="cid" value="2002"></property>
+		<property name="cname" value="Kartik"></property>
+		
+		</bean>
+		
+		
+		
+</beans>
